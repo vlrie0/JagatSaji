@@ -1,0 +1,507 @@
+
+/* =========================
+   1. RESET DASAR
+========================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    font-family: Arial, sans-serif;
+    color: #302319;
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================
+   2. NAVBAR
+========================= */
+nav {
+    width: 100%;
+    background-color: #080704;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.wrapper {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    position: relative;
+}
+
+nav .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2%;
+    min-height: 75px;
+}
+
+.logo a {
+    font-size: clamp(18px, 2.5vw, 30px);
+    font-family: Georgia, serif;
+    font-weight: bold;
+    color: #fff8ef;
+    white-space: nowrap;
+}
+
+.menu {
+    min-width: 0;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+}
+
+.menu ul li a {
+    display: block;
+    color: #fff;
+    font-size: clamp(10px, 1.1vw, 14px);
+    font-weight: bold;
+    padding: 0.8em 0.6em;
+    transition: color 0.25s ease;
+}
+
+.menu ul li a:hover {
+    color: #ffbd61;
+}
+
+/* Mengatasi jarak inline Hubungi Kami */
+.menu ul li a[style] {
+    margin-right: 0 !important;
+}
+
+.menu ul li a img {
+    width: 1.2em;
+    height: auto;
+}
+
+.menu ul li a.order {
+    background-color: #f0960e;
+    color: white;
+    border-radius: 2em;
+    padding: 0.8em 1em;
+    white-space: nowrap;
+    transition: background-color 0.25s ease,
+                transform 0.25s ease;
+}
+
+.menu ul li a.order:hover {
+    background-color: #d97c00;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   3. BANNER
+========================= */
+#home {
+    width: 100%;
+    padding: 4% 0;
+}
+
+#home > .wrapper > section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5%;
+}
+
+.kolom {
+    width: 50%;
+    min-width: 0;
+}
+
+.kolom h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(24px, 3.5vw, 42px);
+    line-height: 1.25;
+    color: #dfa96e;
+    margin-bottom: 5%;
+}
+
+.kolom .deskripsi {
+    font-family: Georgia, serif;
+    font-size: clamp(12px, 1.3vw, 16px);
+    line-height: 1.8;
+    color: #302319;
+    margin-bottom: 5%;
+}
+
+.kolom p {
+    font-size: 95%;
+    line-height: 1.7;
+}
+
+a.reservasi {
+    display: inline-block;
+    background-color: #f0960e;
+    color: white;
+    padding: 0.8em 1.3em;
+    border-radius: 2em;
+    font-size: 85%;
+    font-weight: bold;
+    transition: background-color 0.25s ease,
+                transform 0.25s ease;
+}
+
+a.reservasi:hover {
+    background-color: #d97c00;
+    transform: translateY(-2px);
+}
+
+.gambar {
+    width: 45%;
+    height: auto;
+    flex: 0 1 45%;
+    object-fit: cover;
+    border-radius: 4%;
+    box-shadow: 0 0.5rem 1.2rem rgba(120, 75, 20, 0.15);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.gambar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.8rem 1.5rem rgba(120, 75, 20, 0.22);
+}
+
+/* =========================
+   4. PILIHAN MENU
+========================= */
+.pilihan-menu {
+    display: block;
+    width: 100%;
+    padding: 3% 5%;
+    margin-top: 2%;
+    border-top: 1px solid #e8ded0;
+    text-align: center;
+}
+
+.pilihan-menu h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(24px, 3vw, 36px);
+    line-height: 1.4;
+    color: #dfa96e;
+    margin-bottom: 3%;
+}
+
+.daftar-menu {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 3%;
+    row-gap: 1.5rem;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    align-items: stretch;
+}
+
+.kartu-menu {
+    min-width: 0;
+    background-color: #f7dfb5;
+    padding: 5%;
+    border-radius: 0.8rem;
+    text-align: center;
+    overflow-wrap: break-word;
+
+    box-shadow: 0 0.25rem 0.7rem rgba(92, 57, 20, 0.10);
+
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease,
+                background-color 0.25s ease;
+}
+
+/* Hover kartu menu */
+.kartu-menu:hover {
+    transform: translateY(-5px);
+    background-color: #ffe6bd;
+    box-shadow: 0 0.7rem 1.3rem rgba(92, 57, 20, 0.18);
+}
+
+.kartu-menu img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 0.4rem;
+    transition: transform 0.3s ease;
+}
+
+.kartu-menu:hover img {
+    transform: scale(1.02);
+}
+
+.kartu-menu h3 {
+    font-size: clamp(13px, 1.5vw, 18px);
+    line-height: 1.4;
+    margin: 7% 0;
+    color: #302319;
+}
+
+.kartu-menu p {
+    font-size: clamp(11px, 1.1vw, 14px);
+    line-height: 1.7;
+    color: #504031;
+}
+
+/* =========================
+   5. FOOTER
+========================= */
+.footer {
+    display: block;
+    width: 100%;
+    background-color: #151515;
+    color: white;
+    padding: 4% 5% 2%;
+    margin-top: 5%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 4%;
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+}
+
+.footer-column h3 {
+    font-family: Georgia, serif;
+    font-size: clamp(16px, 2vw, 22px);
+    line-height: 1.4;
+    color: white;
+    margin-bottom: 8%;
+}
+
+.footer-column p {
+    font-size: clamp(11px, 1.1vw, 14px);
+    line-height: 1.9;
+    color: #eee;
+    overflow-wrap: anywhere;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 5%;
+}
+
+.social-media a {
+    display: inline-block;
+    color: white;
+    background-color: #333;
+    padding: 0.6em 0.8em;
+    border-radius: 0.4rem;
+    font-size: clamp(10px, 1vw, 13px);
+    transition: background-color 0.25s ease,
+                transform 0.25s ease;
+}
+
+.social-media a:hover {
+    background-color: #f0960e;
+    transform: translateY(-2px);
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 4%;
+    border-top: 1px solid #444;
+    padding-top: 2%;
+}
+
+.copyright p {
+    color: #ddd;
+    font-size: clamp(10px, 1vw, 13px);
+    line-height: 1.7;
+}
+
+/* =========================
+   6. RESPONSIVE UNTUK HP
+========================= */
+@media screen and (max-width: 600px) {
+
+    /* Navbar lebih ringkas */
+    nav .wrapper {
+        width: 94%;
+        min-height: auto;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 3% 0;
+    }
+
+    .logo a {
+        font-size: 1.4rem;
+    }
+
+    .menu {
+        width: 100%;
+    }
+
+    .menu ul {
+        justify-content: center;
+        gap: 0.1rem;
+    }
+
+    .menu ul li a {
+        font-size: clamp(10px, 2.8vw, 13px);
+        padding: 0.7em 0.45em;
+    }
+
+    .menu ul li a.order {
+        padding: 0.7em 0.9em;
+    }
+
+    /* Banner tersusun vertikal */
+    #home {
+        padding: 7% 0;
+    }
+
+    #home > .wrapper > section {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.2rem;
+    }
+
+    .kolom {
+        width: 100%;
+    }
+
+    .kolom h2 {
+        font-size: clamp(25px, 7vw, 34px);
+        margin-bottom: 4%;
+    }
+
+    .kolom .deskripsi {
+        font-size: 0.9rem;
+        line-height: 1.8;
+        margin-bottom: 5%;
+    }
+
+    .gambar {
+        width: 100%;
+        flex: none;
+        margin-top: 0;
+        border-radius: 0.8rem;
+    }
+
+    /* Dua kartu per baris */
+    .pilihan-menu {
+        padding: 7% 4%;
+        margin-top: 4%;
+    }
+
+    .pilihan-menu h2 {
+        font-size: 1.7rem;
+        margin-bottom: 7%;
+    }
+
+    .daftar-menu {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 4%;
+        row-gap: 1rem;
+    }
+
+    .kartu-menu {
+        padding: 6%;
+        border-radius: 0.7rem;
+    }
+
+    .kartu-menu img {
+        border-radius: 0.35rem;
+    }
+
+    .kartu-menu h3 {
+        font-size: clamp(12px, 3.5vw, 16px);
+        margin: 8% 0;
+    }
+
+    .kartu-menu p {
+        font-size: clamp(11px, 3vw, 13px);
+        line-height: 1.7;
+    }
+
+    /* Footer lebih rapi dan tidak berdempetan */
+    .footer {
+        padding: 8% 6% 5%;
+        margin-top: 8%;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .footer-column {
+        width: 100%;
+        flex: none;
+        margin-bottom: 0;
+    }
+
+    .footer-column h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .footer-column p {
+        font-size: 0.9rem;
+        line-height: 1.9;
+    }
+
+    .social-media {
+        margin-top: 0.8rem;
+    }
+
+    .copyright {
+        margin-top: 2rem;
+        padding-top: 1rem;
+    }
+
+    .copyright p {
+        font-size: 0.75rem;
+    }
+}
+
+/* Kurangi animasi jika pengguna memilihnya */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}
